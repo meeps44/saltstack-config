@@ -12,3 +12,13 @@ make
 make install
 export PATH=$PATH:~/git/libparistraceroute/paris-traceroute
 ldconfig
+
+salt '*' cmd.run 'ls -l'
+
+scp -i /root/.ssh/scp-key /root/batman.txt root@209.97.138.74:/root/logs
+
+salt '*' cmd.run 'scp -i scp-key ../batman.txt root@209.97.138.74:/root/'
+
+
+ - Recursively copy the contents of a directory from a remote host to a local directory:
+   scp -r {{remote_host}}:{{path/to/remote_directory}} {{path/to/local_directory}}
