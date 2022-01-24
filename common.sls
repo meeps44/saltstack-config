@@ -1,23 +1,23 @@
 install_common_tools:
   pkg.installed:
     - pkgs:
-      - rsync
-      - lftp
-      - curl
-      - git
       - python3
+      - autoconf
+      - build-essential
+      - git
+      - libtool
 
 create my_new_directory:
  file.directory:
-   - name: /opt/my_new_directory
+   - name: ~/git
    - user: root
    - group: root
    - mode: 755
 
-Clone the SaltStack bootstrap script repo:
+Clone the Paris-Traceroute repo:
   pkg.installed: 
-    - name: git # make sure git is installed first!
+    - name: git autoconf build-essential libtool # make sure git is installed first!
   git.latest:
-    - name: https://github.com/saltstack/salt-bootstrap
+    - name:  https://github.com/meeps44/libparistraceroute.git"
     - rev: develop
-    - target: /tmp/salt
+    - target: ~/git
