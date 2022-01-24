@@ -19,6 +19,9 @@ scp -i /root/.ssh/scp-key /root/batman.txt root@209.97.138.74:/root/logs
 
 salt '*' cmd.run 'scp -i scp-key ../batman.txt root@209.97.138.74:/root/'
 
+# Add public key to authorized_keys:
+salt '*' cmd.run 'echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkwVDhGaQSUpSA4yvAoCwz8h0vyIMyHBmMLTV5gXOvo+i8igURd9b5ZKV9ygrvzxtbiSG7oUbBONpJ1rrgAby1wZ5nQd6jrxQE3UwpuxQC1mMk+5MEpbw/PFmIPdNtVCpn5mRFjkhJpN78IVk43qQw0T9LdkwGqBDBvdfUgzGa66y7NtDpDZUQ+TfRTSku7ubwdj1U6WXQ7FYn+alGwO0pr40XmyyVeD8CmB6sqReva5btrF3VAOSIAykEbaLY1WV3ydNg3p6TRNwlLIBlIDBTtAtyFX1fTFzexAmywxqSKj1wVRH+g2XCpMnJIB3RoY5Pl63pEW6bodlOLAVYZtBI72qndSq8//01J387KMLV92jNzngsDtlgKJxOCDL7JK6fUAcelfK0xMKLMyGXN8QUw9oduoVOgRs+KhId637WxNNVu6osrxFIGZ7UtZQpn6YYfYTYs8grNUBMzGJ6hAb3SwWGpVlmMZ39RjfBbgUB+1lXUzp1iotJQNXEULjC5Pk= root@ubuntu-s-1vcpu-1gb-lon1-01 >> /root/.ssh/authorized_keys'
+
 
  - Recursively copy the contents of a directory from a remote host to a local directory:
    scp -r {{remote_host}}:{{path/to/remote_directory}} {{path/to/local_directory}}
