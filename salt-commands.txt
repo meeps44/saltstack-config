@@ -25,3 +25,6 @@ salt '*' cmd.run 'echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkwVDhGaQSUpSA4yvAo
 
  - Recursively copy the contents of a directory from a remote host to a local directory:
    scp -r {{remote_host}}:{{path/to/remote_directory}} {{path/to/local_directory}}
+
+Copy file from SOURCE to DEST:
+salt-cp '*' SOURCE [SOURCE2 SOURCE3 ...] DEST
