@@ -1,0 +1,8 @@
+ubuntu-lon1-0
+ubuntu-ams3-0
+ubuntu-nyc1-0
+ubuntu-sfo3-0
+ubuntu-sgp1-0
+ubuntu-fra1-0
+ubuntu-tor1-0
+ubuntu-blr1-0
